@@ -12,7 +12,7 @@ import {
 	FormLabel,
 	Input,
 	Button,
-	Spinner
+	Spinner, StatHelpText, Link
 } from '@chakra-ui/core';
 import {Cashify} from 'cashify';
 import currency from 'currency.js';
@@ -100,17 +100,16 @@ const Index: NextPage<Props> = (props: Readonly<Props>) => {
 		if (!to || !from) {
 			return;
 		}
-
-		setValue('from', to);
-		setValue('to', from);
+		// setValue('from', to);
+		// setValue('to', from);
 	};
 
 	return (
 		<Container>
 			<Stack spacing={3}>
-				<Heading textAlign="center">Currency Converter</Heading>
+				<Heading textAlign="center">Convertor Valută</Heading>
 				<FormControl>
-					<FormLabel htmlFor="amount">Amount</FormLabel>
+					<FormLabel htmlFor="amount">Sumă</FormLabel>
 					<Input
 						ref={register({required: true})}
 						type="number"
@@ -118,18 +117,20 @@ const Index: NextPage<Props> = (props: Readonly<Props>) => {
 						step="any"
 						pattern="[0-9]*"
 						name="amount"
-						placeholder="Amount"
+						placeholder="Sumă"
 						// @ts-ignore
 						enterkeyhint="go"
 					/>
 				</FormControl>
 				<FormControl>
-					<FormLabel htmlFor="from">From</FormLabel>
+					<FormLabel htmlFor="from">Schimbă din</FormLabel>
 					<Controller as={Select} name="from" control={control} styles={customStyles} options={options}/>
 				</FormControl>
-				<Button leftIcon="repeat" variant="ghost" onClick={() => swap()}>Swap</Button>
+				<Button leftIcon="repeat" variant="ghost" onClick={() => swap()}>
+				{/* Inversează valutele */}
+				</Button>
 				<FormControl>
-					<FormLabel htmlFor="to">To</FormLabel>
+					<FormLabel htmlFor="to">În</FormLabel>
 					<Controller as={Select} name="to" control={control} styles={customStyles} options={options}/>
 				</FormControl>
 				<Box borderWidth="1px" rounded="lg" padding={10} textAlign="center">
@@ -140,8 +141,11 @@ const Index: NextPage<Props> = (props: Readonly<Props>) => {
 							to={result.to}
 							result={result.result}
 						/>							:
-						<Text>Result will appear here</Text>}
+						<Text>Rezultat</Text>}
 				</Box>
+				<StatHelpText>
+					<Link isExternal href="https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/index.en.html">Curs valutar obtinut de la Banca Europeana Centrala</Link>
+		</StatHelpText>
 			</Stack>
 		</Container>
 	);

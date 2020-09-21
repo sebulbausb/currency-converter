@@ -57,7 +57,7 @@ const myApp = ({Component, pageProps}: Readonly<AppProps>): JSX.Element => (
 			<CSSReset/>
 			<Global styles={globalStyle}/>
 			<Head>
-				<title>Currency Converter</title>
+				<title>Convertor Valuta</title>
 			</Head>
 			<Component {...pageProps}/>
 		</DarkMode>

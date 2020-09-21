@@ -4,9 +4,10 @@ export const options = [
 	{
 		label: 'Majors',
 		options: [
-			{value: 'USD', label: 'US Dollar (USD)'},
-			{value: 'GBP', label: 'UK Pound (GBP)'},
 			{value: 'EUR', label: 'Euro (EUR)'},
+			{value: 'RON', label: 'Leu Românesc (RON)'},
+			{value: 'USD', label: 'Dolarul SUA (USD)'},
+			{value: 'GBP', label: 'Lira sterlină (GBP)'},
 			{value: 'AUD', label: 'Australian Dollar (AUD)'},
 			{value: 'CAD', label: 'Canadian Dollar (CAD)'},
 			{value: 'CNY', label: 'Chinese Yuan Renminbi (CNY)'},
@@ -26,7 +27,6 @@ export const options = [
 			{value: 'ISK', label: 'Icelandic Krona (ISK)'},
 			{value: 'NOK', label: 'Norwegian Krone (NOK)'},
 			{value: 'PLN', label: 'Polish New Zloty (PLN)'},
-			{value: 'RON', label: 'Romanian Leu (RON)'},
 			{value: 'RUB', label: 'Russian Ruble (RUB)'},
 			{value: 'SEK', label: 'Swedish Krona (SEK)'},
 			{value: 'CHF', label: 'Swiss Franc (CHF)'},
